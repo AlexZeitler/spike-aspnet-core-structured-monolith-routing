@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using AspNetCoreMvcHtmx.Models;
+using StructuredMonolithRouting.Models;
 
-namespace AspNetCoreMvcHtmx.Controllers;
+namespace StructuredMonolithRouting.Controllers;
 
 public class HomeController : Controller
 {

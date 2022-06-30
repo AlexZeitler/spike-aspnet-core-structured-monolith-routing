@@ -1,4 +1,4 @@
-namespace AspNetCoreMvcHtmx.Models;
+namespace StructuredMonolithRouting.Models;
 
 public class ErrorViewModel
 {

@@ -1,4 +1,4 @@
-namespace AspNetCoreMvcHtmx.Controllers;
+namespace StructuredMonolithRouting.Controllers;
 
 public static class Constants
 {
