@@ -1,4 +1,4 @@
-namespace AspNetCoreMvcHtmx.Tests;
+namespace StructuredMonolithRouting.Tests;
 
 public class UnitTest1
 {
