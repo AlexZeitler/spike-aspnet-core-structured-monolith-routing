@@ -1,6 +1,8 @@
+using Microsoft.AspNetCore.Mvc.Razor;
 using StructuredMonolithRouting.Core;
 using Serilog;
 using Serilog.Extensions.Logging;
+using StructuredMonolithRouting.Features;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +12,9 @@ var logger = new SerilogLoggerFactory(Log.Logger)
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.Configure<RazorViewEngineOptions>(
+  o => o.ViewLocationExpanders.Add(new FeatureFolderLocationExpander()));
+
 
 var app = builder.Build();
 
