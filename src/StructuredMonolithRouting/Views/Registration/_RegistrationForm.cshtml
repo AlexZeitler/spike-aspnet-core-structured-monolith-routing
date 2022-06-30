@@ -5,19 +5,19 @@
 }
 
 <form class="space-y-6"
-      hx-post
-      hx-swap="outerHTML"
       hx-action="PostForm"
-      hx-controller="Registration">
+      hx-controller="Registration"
+      hx-post
+      hx-swap="outerHTML">
   <div class="grid grid-cols-2 gap-3">
     <div>
       <label asp-for="FirstName"
              class="block text-sm font-medium text-gray-700">
       </label>
       <div class="mt-1">
-        <input type="text"
-               asp-for="FirstName"
-               class="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"/>
+        <input asp-for="FirstName"
+               class="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+               type="text"/>
       </div>
     </div>
     <div>
@@ -26,8 +26,8 @@
       </label>
       <div class="mt-1">
         <input asp-for="LastName"
-               type="text"
-               class="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"/>
+               class="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+               type="text"/>
       </div>
     </div>
   </div>
@@ -55,14 +55,14 @@
     </label>
     <div class="mt-1">
       <input asp-for="Password"
-             hx-post
+             class="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
              hx-action="PasswordValidation"
              hx-controller="Registration"
-             type="password"
+             hx-post
+             hx-swap="innerHTML"
              hx-target="#passwordstrength"
              hx-trigger="keyup"
-             hx-swap="innerHTML"
-             class="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"/>
+             type="password"/>
     </div>
   </div>
   <div id="passwordstrength">
@@ -73,8 +73,8 @@
        class="text-red-500">
   </div>
   <div>
-    <button type="submit"
-            class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md shadow-sm bg-blue-500 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
+    <button class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md shadow-sm bg-blue-500 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
+            type="submit"
             @* disabled={!passwordValid}# *@>
       Register now
     </button>
