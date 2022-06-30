@@ -1,0 +1,10 @@
+@model dynamic
+
+@{
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="w-64">
+  @{@(await Html.PartialAsync("_CustomerForm"))}
+</div>
+
