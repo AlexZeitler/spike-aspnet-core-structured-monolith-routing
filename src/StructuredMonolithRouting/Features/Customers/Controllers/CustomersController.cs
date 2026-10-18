@@ -15,7 +15,7 @@ public class CustomersController : Controller
   public IActionResult Index()
   {
     _logger.LogInformation("Test");
-    return View();
+    return View("Customer");
   }
 
   [HttpPost]

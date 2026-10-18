@@ -14,7 +14,7 @@ var logger = new SerilogLoggerFactory(Log.Logger)
 builder.Services.AddControllersWithViews();
 builder.Services.Configure<RazorViewEngineOptions>(
   o => o.ViewLocationExpanders.Add(new FeatureFolderLocationExpander()));
-
+builder.Services.AddMvc();
 
 var app = builder.Build();
 
@@ -33,8 +33,13 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-  name: "default",
-  pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapControllers();
+app.UseEndpoints(
+  endpoints =>
+  {
+    endpoints.MapDefaultControllerRoute()
+      .RequireAuthorization();
+  }
+);
 
 app.Run();
